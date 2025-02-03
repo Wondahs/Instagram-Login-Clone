@@ -1,5 +1,7 @@
 const showPsswd  = document.getElementById('toggle-password');
 const pswdInput = document.getElementById('password');
+const usernameInput = document.getElementById('username');
+const loginBtn = document.getElementById('login-btn');
 
 pswdInput.addEventListener('focus', () => {
     // console.log('focus');
@@ -11,6 +13,14 @@ document.addEventListener('click', (e) => {
         showPsswd.style.display = 'none';
     }
 })
+
+const toggleLoginButton = () => {
+    loginBtn.disabled = !(pswdInput.value.length >= 5 && usernameInput.value.length >= 5);
+};
+
+pswdInput.addEventListener('input', toggleLoginButton);
+usernameInput.addEventListener('input', toggleLoginButton);
+
 
 
 showPsswd.addEventListener('click', () => {
