@@ -11,17 +11,33 @@
         <div class="login-box">
             <i class="logo"></i>
             <form id="login-form">
-                <input type="text" id="username" placeholder="Phone number, username, or email">
                 <div class="password-container">
-                    <input type="password" id="password" placeholder="Password">
-                    <span id="toggle-password">Show</span>
+                    <div class="input-container">
+                        <input type="text" id="username" placeholder=" ">
+                        <label for="username">Phone number, username, or email</label>
+                    </div>
+                </div>
+                <div class="password-container">
+                    <div class="input-container-pwd">
+                        <input type="password" id="password" placeholder=" ">
+                        <label for="password">Password</label>
+                        <span id="toggle-password">Show</span>
+                    </div>
                 </div>
                 <button type="submit" id="login-btn" disabled>Log in</button>
                 <p class="error-message" id="error-message"></p>
             </form>
+            <div class="divider"><span>OR</span></div>
+            <div class="fb-login">
+                <img src="./images/logo-facebook-svgrepo-com.svg" alt="Facebook logo">
+                <p>Log in with Facebook</p>
+            </div>
             <p class="forgot-password"><a href="#">Forgot password?</a></p>
         </div>
+        <div class="signup-box login-box">
+            <p>Don't have an account? <span>Sign up</span></p>
+        </div>
     </div>
-    <script src="script.js"></script>
+    <script src="./script/script.js"></script>
 </body>
 </html>
