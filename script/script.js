@@ -29,3 +29,8 @@ showPsswd.addEventListener('click', () => {
     pswdInput.type = pswdInput.type === 'password'? 'text' : 'password';  // Toggle between 'password' and 'text' types
     showPsswd.textContent = pswdInput.type === 'password'? 'Show' : 'Hide'; // Update the button text
 })
+
+loginBtn.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent the form from submitting normally
+    window.location.href= "/2FA.html";
+});
