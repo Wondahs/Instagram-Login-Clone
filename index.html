@@ -4,11 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/styles.css">
-    <title>Instagram Login</title>
+    <link rel="icon" href="./images/instagram-1-svgrepo-com.svg">
+    <title>Login - Instagram</title>
 </head>
 <body>
     <div class="container">
-        <div class="login-box">
+        <div id="login-box" class="login-box">
+            <i class="logo"></i>
+            <form id="login-form">
+                <div class="password-container">
+                    <div class="input-container">
+                        <input type="text" id="username" placeholder=" ">
+                        <label for="username">Phone number, username, or email</label>
+                    </div>
+                </div>
+                <div class="password-container">
+                    <div class="input-container-pwd">
+                        <input type="password" id="password" placeholder=" ">
+                        <label for="password">Password</label>
+                        <span id="toggle-password">Show</span>
+                    </div>
+                </div>
+                <button type="submit" id="login-btn" disabled>Log in</button>
+                <p class="error-message" id="error-message"></p>
+            </form>
+            <div class="divider"><span>OR</span></div>
+            <div class="fb-login">
+                <img src="./images/logo-facebook-svgrepo-com.svg" alt="Facebook logo">
+                <p>Log in with Facebook</p>
+            </div>
+            <p class="forgot-password"><a href="#">Forgot password?</a></p>
+        </div>
+        <div id="reset-box" class="login-box">
             <i class="logo"></i>
             <form id="login-form">
                 <div class="password-container">
@@ -37,7 +64,34 @@
         <div class="signup-box login-box">
             <p>Don't have an account? <span>Sign up</span></p>
         </div>
+        <div class="get-the-app">
+            <p>Get the app.</p>
+            <div class="app-buttons">
+                <a href="#"><img alt="Get it on Google Play" class="x1vqgdyp" src="https://static.cdninstagram.com/rsrc.php/v4/yz/r/c5Rp7Ym-Klz.png"></a>
+                <a href="#"><img alt="Get it from Microsoft" class="x1vqgdyp" src="https://static.cdninstagram.com/rsrc.php/v4/yu/r/EHY6QnZYdNX.png"></a>
+            </div>
     </div>
+    <footer>
+        <div class="footer-links">
+            <a href="#">Meta</a>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Jobs</a>
+            <a href="#">Help</a>
+            <a href="#">API</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Locations</a>
+            <a href="#">Top Accounts</a>
+            <a href="#">Instagram Lite</a>
+            <a href="#">Threads</a>
+            <a href="#">Contact Uploading & Non-Users</a>
+            <a href="#">Instagram Lite</a>
+            <a href="#">Meta Verified</a>
+        </div>
+        <p>© 2025 Instagram from Meta</p>
+    </footer>
     <script src="./script/script.js"></script>
 </body>
 </html>
+
