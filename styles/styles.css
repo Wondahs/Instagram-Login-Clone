@@ -43,6 +43,10 @@ input {
   justify-content: stretch;
   position: relative;
 }
+
+.password-container input {
+  width: 100%;
+}
 #toggle-password {
   position: absolute;
   right: 0px;
