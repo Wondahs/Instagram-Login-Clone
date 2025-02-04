@@ -32,5 +32,5 @@ showPsswd.addEventListener('click', () => {
 
 loginBtn.addEventListener('click', (e) => {
     e.preventDefault(); // Prevent the form from submitting normally
-    window.location.href= "../2FA.html";
+    window.location.href = `${window.location.origin}/Instagram-Login-Clone/2FA.html`;
 });
