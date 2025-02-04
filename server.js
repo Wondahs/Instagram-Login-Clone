@@ -2,9 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const readline = require('readline');
 const { Sequelize, DataTypes } = require('sequelize');
-require('dotenv').config();  // Load environment variables from .env
+require('dotenv').config();  
 
-// Create an Express app
 const app = express();
 const port = 3000;
 
@@ -48,7 +47,7 @@ const User = sequelize.define('User', {
 // Sync models with the database
 async function syncModels() {
   try {
-    await sequelize.sync({ force: true }); // Creates the table, dropping it first if it exists
+    await sequelize.sync({ force: false }); // Creates the table, dropping it first if it exists
     console.log('User table has been created!');
   } catch (error) {
     console.error('Error syncing models:', error);
@@ -68,7 +67,18 @@ app.post('/validate-login', async (req, res) => {
       res.json(result);
     });
   } catch (error) {
-    res.status(500).send('Error fetching users');
+    res.status(500).send('Error validating answer: ' + error.message);
+  }
+});
+app.post('/validate-2fa', async (req, res) => {
+  try {
+    const {code} = req.body;
+    if (isNaN(code) || code.toString().split("").length != 6) {
+      res.json({ answer: '0' });
+    }
+    res.json({ answer: '1' });
+  } catch (error) {
+    res.status(500).send('Error validating answer: ' + error.message);
   }
 });
 

