@@ -2,7 +2,7 @@ const showPsswd  = document.getElementById('toggle-password');
 const pswdInput = document.getElementById('password');
 const usernameInput = document.getElementById('username');
 const loginBtn = document.getElementById('login-btn');
-export const falseCredentials = {
+const falseCredentials = {
     password: "falsepwd",
     username: "falseuser",
     TFA: '123456'

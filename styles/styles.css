@@ -251,7 +251,7 @@ footer p {
   margin-bottom: 50px;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 768px) {
   .login-box {
       border: none;
   }
