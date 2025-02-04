@@ -256,3 +256,41 @@ footer p {
       border: none;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  body,
+  .login-box,
+  .fb-login,
+  .divider span {
+    background-color: black;
+    color: rgb(168, 168, 168);
+  }
+
+  input {
+    color: rgb(168, 168, 168);
+  }
+
+  .input-container,
+  .input-container-pwd{
+    background: rgba(0, 0, 0, .6);
+    border-color: rgb(168, 168, 168);
+  }
+
+  .logo {
+    background-image: url("https://static.cdninstagram.com/rsrc.php/v4/yD/r/mGpMUcXdATS.png");
+    background-position: 0px -440px;
+    background-size: 193px 945px;
+    width: 175px;
+    height: 51px;
+    background-repeat: no-repeat;
+    display: inline-block;
+  }
+
+  @media (max-width: 450px) {
+    .login-box {
+      border: none;
+    }
+  }
+}
+
+
