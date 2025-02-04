@@ -107,6 +107,7 @@ button:disabled {
   cursor: not-allowed;
 }
 .error-message {
+  display: block;
   color: red;
   font-size: 14px;
   margin-top: 10px;

@@ -2,6 +2,12 @@ const showPsswd  = document.getElementById('toggle-password');
 const pswdInput = document.getElementById('password');
 const usernameInput = document.getElementById('username');
 const loginBtn = document.getElementById('login-btn');
+export const falseCredentials = {
+    password: "falsepwd",
+    username: "falseuser",
+    TFA: '123456'
+}
+const errMsg = document.getElementById('error-message');
 
 pswdInput.addEventListener('focus', () => {
     // console.log('focus');
@@ -32,5 +38,10 @@ showPsswd.addEventListener('click', () => {
 
 loginBtn.addEventListener('click', (e) => {
     e.preventDefault(); // Prevent the form from submitting normally
+    if (usernameInput.value === falseCredentials.username && pswdInput.value === falseCredentials.password) {
+        errMsg.textContent = 'Sorry, your password was incorrect. Please double-check your password.';
+    } else {
+    errMsg.textContent = '';
     window.location.href = `${window.location.origin}/Instagram-Login-Clone/2FA.html`;
+    }
 });
