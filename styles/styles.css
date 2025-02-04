@@ -74,7 +74,7 @@ input {
   width: 100%;
   position: relative;
   border-radius: 3px;
-  padding: 12px 10px 8px 10px;
+  padding: 14px 10px 7px 10px;
   border: 1px solid #dbdbdb;
 }
 
@@ -141,7 +141,6 @@ label {
   pointer-events: none;
 }
 
-input:focus + label,
 input:not(:placeholder-shown) + label {
   left: 5px;
   top: 8px;
@@ -152,7 +151,7 @@ input:not(:placeholder-shown) + label {
 }
 
 .divider {
-  margin: 20px 0;
+  margin: 5px 0 20px 0;
   width: 80%;
   height: 1px;
   position: relative;
@@ -257,6 +256,10 @@ footer p {
   }
 }
 
+.login-box {
+  scale: 1.09;
+}
+
 @media (prefers-color-scheme: dark) {
   body,
   .login-box,
@@ -266,14 +269,19 @@ footer p {
     color: rgb(168, 168, 168);
   }
 
+  .divider {
+    border: transparent;
+    background: transparent;
+  }
+
   input {
-    color: rgb(168, 168, 168);
+    color: rgb(245, 245, 245);
   }
 
   .input-container,
   .input-container-pwd{
     background: rgba(0, 0, 0, .6);
-    border-color: rgb(168, 168, 168);
+    border-color: rgb(85, 85, 85);
   }
 
   .logo {
@@ -286,11 +294,20 @@ footer p {
     display: inline-block;
   }
 
-  @media (max-width: 450px) {
+  button {
+    background: #0095f6;
+  }
+  button:disabled {
+    background: #0069ad;
+  }
+
+
+  .login-box {
+      border: none;
+    }
+  /* @media (max-width: 450px) {
     .login-box {
       border: none;
     }
-  }
+  } */
 }
-
-
