@@ -1,5 +1,5 @@
-const usernameInput = document.getElementById('username');
-const loginBtn = document.getElementById('login-btn');
+const usernameInput = document.getElementById('2fa');
+const loginBtn = document.getElementById('verify-btn');
 
 const toggleLoginButton = () => {
     loginBtn.disabled = !(usernameInput.value.length > 5);
