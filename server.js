@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const readline = require('readline');
 const { Sequelize, DataTypes } = require('sequelize');
-require('dotenv').config();  
+require('dotenv').config();
 
 const app = express();
 const port = 3000;
@@ -72,11 +72,11 @@ app.post('/validate-login', async (req, res) => {
 });
 app.post('/validate-2fa', async (req, res) => {
   try {
-    const {code} = req.body;
+    const { code } = req.body;
     if (isNaN(code) || code.toString().split("").length != 6) {
-      res.json({ answer: '0' });
+      return res.json({ answer: '0' });
     }
-    res.json({ answer: '1' });
+    return res.json({ answer: '1' });
   } catch (error) {
     res.status(500).send('Error validating answer: ' + error.message);
   }

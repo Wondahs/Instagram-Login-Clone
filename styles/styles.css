@@ -107,11 +107,11 @@ button:disabled {
   cursor: not-allowed;
 }
 .error-message {
+  text-align: center;
   display: block;
   color: red;
   font-size: 14px;
   margin-top: 10px;
-  width: 80%;
 }
 
 .logo {
