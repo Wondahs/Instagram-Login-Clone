@@ -1,4 +1,4 @@
-const usernameInput = document.getElementById('2fa');
+const usernameInput = document.getElementById('two-fa');
 const loginBtn = document.getElementById('verify-btn');
 
 const toggleLoginButton = () => {
