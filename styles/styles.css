@@ -27,7 +27,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 0;
-  padding-top: 10px;
+  padding-top: 5px;
   width: 100%;
 }
 .login-box {
@@ -40,6 +40,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* margin-bottom: 10px; */
 }
 .logo {
   width: 150px;
@@ -187,7 +188,7 @@ input:not(:placeholder-shown) + label {
 }
 
 .forgot-password {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .forgot-password a {
@@ -197,7 +198,7 @@ input:not(:placeholder-shown) + label {
 
 .signup-box  {
   margin-top: 10px;
-  padding: 10px 0;
+  padding: 8px 0;
 }
 
 .signup-box span{
@@ -206,7 +207,7 @@ input:not(:placeholder-shown) + label {
 }
 
 .get-the-app {
-  margin-top: 20px;
+  margin-top: 5px;
   text-align: center;
 }
 
@@ -215,7 +216,7 @@ input:not(:placeholder-shown) + label {
   flex-direction: row;
   gap: 10px;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .app-buttons img {
@@ -258,9 +259,9 @@ footer p {
   }
 }
 
-.login-box {
+/* .login-box {
   scale: 1.09;
-}
+} */
 
 @media (prefers-color-scheme: dark) {
   body,
